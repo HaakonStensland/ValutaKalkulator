@@ -1,5 +1,5 @@
-const apiKey = 'YOUR_API_KEY'; // Replace with your Fixer.io API key
-const apiUrl = `https://data.fixer.io/api/latest?base=USD&access_key=${apiKey}`;
+const apiKey = 'ec25136b81468ccf1a841ecd'; // Replace with your ExchangeRate-API key
+const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
 const amountInput = document.getElementById('amount');
 const currencySelect = document.getElementById('currency');
 const convertButton = document.getElementById('convert');
@@ -9,7 +9,7 @@ const resultSpan = document.getElementById('result');
 fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
-        const currencies = Object.keys(data.rates);
+        const currencies = Object.keys(data.conversion_rates);
         currencies.forEach(currency => {
             const option = document.createElement('option');
             option.text = currency;
@@ -27,7 +27,7 @@ convertButton.addEventListener('click', () => {
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
-                const exchangeRate = data.rates[selectedCurrency];
+                const exchangeRate = data.conversion_rates[selectedCurrency];
                 const convertedAmount = (amount * exchangeRate).toFixed(2);
                 resultSpan.textContent = `${amount} USD = ${convertedAmount} ${selectedCurrency}`;
             })
