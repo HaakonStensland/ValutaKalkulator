@@ -7,11 +7,11 @@ const ChangeButton = document.getElementById('Change');
 const resultSpan = document.getElementById('result');
 let data; // Declare a variable to store the fetched data
 
-// Fetch and populate currency options
+
 fetch(apiUrl)
     .then(response => response.json())
     .then(responseData => {
-        data = responseData; // Store the fetched data
+        data = responseData; 
         const currencies = Object.keys(data.conversion_rates);
         currencies.forEach(currency => {
             const option = document.createElement('option');
@@ -25,7 +25,7 @@ fetch(apiUrl)
         resultSpan.textContent = 'Error fetching currency data. Please try again later.';
     });
 
-// Event listener for the "Convert" button
+
 convertButton.addEventListener('click', () => {
     const amount = parseFloat(amountInput.value);
     const selectedCurrency = currencySelect.value;
