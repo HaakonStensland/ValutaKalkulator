@@ -20,16 +20,16 @@ label {
 
 .penger{
     position: relative;
-    top: -70px;
+    top: 20px;
     z-index: 1px;
     width: 100px;
     left: 1070px;
 
 }
 
-h2{
+.Change{
     position: relative;
-    top: 61px;
+    top: 57px;
     left: 179px;
     font-size: medium;
 
