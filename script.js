@@ -1,8 +1,8 @@
-const apiKey = 'ec25136b81468ccf1a841ecd'; // Replace with your ExchangeRate-API key
+const apiKey = 'ec25136b81468ccf1a841ecd'; // API koden jeg fikk av nettsiden
 const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
-const amountInput = document.getElementById('amount');
+const amountInput = document.getElementById('amount'); // Denne koden linker opp med htmlen og får teksten til og faktis ha en betydning
 const currencySelect = document.getElementById('currency');
-const convertButton = document.getElementById('convert');
+const convertButton = document.getElementById('convert'); // dette er buttonen du trykker for å converte pengene det koden her gjør her gjør at den gjør noe mer en å bare være en button
 const resultSpan = document.getElementById('result');
 
 // Fetch and populate currency options

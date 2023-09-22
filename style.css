@@ -4,12 +4,13 @@ body {
 }
 .container {
     position: relative;
+    top: 100px;
     max-width: 400px;
     background-color: lightskyblue;
     margin: 0 auto;
     height: 400px;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 2px solid navy;
     border-radius: 5px;
 }
 label {
@@ -23,5 +24,13 @@ label {
     z-index: 1px;
     width: 100px;
     left: 1070px;
+
+}
+
+h2{
+    position: relative;
+    top: 61px;
+    left: 179px;
+    font-size: medium;
 
 }
