@@ -1,10 +1,10 @@
   const apiKey = 'ec25136b81468ccf1a841ecd'; // Replace with your API key
-        const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
-        const amountInput = document.getElementById('amount');
-        const fromSelect = document.getElementById('from');
-        const toSelect = document.getElementById('to');
-        const convertButton = document.getElementById('convert');
-        const resultSpan = document.getElementById('result');
+        const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`; //API nettsiden som jeg tok den api koden
+        const amountInput = document.getElementById('amount'); // Det er den som fokuserer på hvor mye som blir puttet in også skal den kalkulere det 
+        const fromSelect = document.getElementById('from'); // Den heter valutaen fra nettsiden om jeg ikke tar helt feil 
+        const toSelect = document.getElementById('to'); // denne skal gjøre akkurat det samme som den over ^^
+        const convertButton = document.getElementById('convert'); // dette linker buttonen i html koden til javascript koden her sånn at den converter det den fikk beskjed om her som er og gå på api koden nettsiden og converte den informasjonen.
+        const resultSpan = document.getElementById('result'); // 
         let data;
 
         fetch(apiUrl)
