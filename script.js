@@ -68,3 +68,4 @@ function updateHistoryList() {
 }
 
 convertButton.addEventListener('click', convertCurrency);
+
