@@ -1,7 +1,7 @@
 const apiKey = 'ec25136b81468ccf1a841ecd'; // Replace with your API key
 const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
-const amountInput = document.getElementById('amount'); 
-const fromSelect = document.getElementById('from');
+const amountInput = document.getElementById('amount'); // 
+const fromSelect = document.getElementById('from');//
 const toSelect = document.getElementById('to');
 const convertButton = document.getElementById('convert');
 const resultSpan = document.getElementById('result');
@@ -9,6 +9,8 @@ const historyList = document.getElementById('history'); // Add this line
 
 let data;
 let conversionHistory = []; // Add this array to store conversion history
+
+    // Denne delen av koden er ansvarlig for å hente valutakursdata fra en API og fylle inn valgmulighetene for valuta i nedtrekksmenyene (fromSelect og toSelect).
 
 fetch(apiUrl)
     .then(response => response.json())
@@ -24,6 +26,8 @@ fetch(apiUrl)
     .catch(error => {
         console.error('Error fetching data:', error);
     });
+
+    //Hvis beløpet eller valutakursene ikke er gyldige, viser den en feilmelding i resultatteksten. Så denne funksjonen gjør selve konverteringsoperasjonen basert på brukerens inndata og oppdaterer resultatet som vises på nettsiden.
 
 function convertCurrency() {
     const fromCurrency = fromSelect.value;
@@ -43,15 +47,19 @@ function convertCurrency() {
     }
 }
 
+// Så, addToHistory funksjonen tar imot en konverteringstekst og legger den til i historikken, og deretter oppdateres visningen av historikken på nettsiden for å vise den nyeste konverteringen.
+
 function addToHistory(conversionText) {
-    conversionHistory.push(conversionText); // Add the conversion to the history array
-    updateHistoryList(); // Update the history list
+    conversionHistory.push(conversionText);
+    updateHistoryList(); 
 }
 
-function updateHistoryList() {
-    historyList.innerHTML = ''; // Clear the history list
+//Så, denne funksjonen oppdaterer visningen av konverteringshistorikken ved å lage nye listeelementer (li) for hver konvertering og legge dem til i den nåværende listen på nettsiden.
 
-    // Loop through the conversion history and create list items
+function updateHistoryList() {
+    historyList.innerHTML = ''; 
+
+    
     conversionHistory.forEach((conversion, index) => {
         const listItem = document.createElement('li');
         listItem.textContent = `Conversion ${index + 1}: ${conversion}`;
