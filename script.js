@@ -1,5 +1,5 @@
 const apiKey = 'ec25136b81468ccf1a841ecd'; // Replace with your API key
-const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
+const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/NOK`;
 const amountInput = document.getElementById('amount'); // 
 const fromSelect = document.getElementById('from');//
 const toSelect = document.getElementById('to');
