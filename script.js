@@ -62,7 +62,7 @@ function updateHistoryList() {
     
     conversionHistory.forEach((conversion, index) => {
         const listItem = document.createElement('li');
-        listItem.textContent = `Conversion ${index + 1}: ${conversion}`;
+        listItem.textContent = `Kalkulert ${index + 1}: ${conversion}`;
         historyList.appendChild(listItem);
     });
 }
