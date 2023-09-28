@@ -4,7 +4,7 @@
         const fromSelect = document.getElementById('from'); // Den heter valutaen fra nettsiden om jeg ikke tar helt feil 
         const toSelect = document.getElementById('to'); // denne skal gjøre akkurat det samme som den over ^^
         const convertButton = document.getElementById('convert'); // dette linker buttonen i html koden til javascript koden her sånn at den converter det den fikk beskjed om her som er og gå på api koden nettsiden og converte den informasjonen.
-        const resultSpan = document.getElementById('result'); // 
+        const resultSpan = document.getElementById('result'); // Den er linket opp med resultSpan.textcontent som gir deg enten et svar eller hvis noe failer så får du meldingen som står "noe skjedde. Sjekk inputsa dine"
         let data;
 
         fetch(apiUrl)
@@ -33,7 +33,7 @@
                 const convertedAmount = (amount * exchangeRate).toFixed(2);
                 resultSpan.textContent = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
             } else {
-                resultSpan.textContent = 'Conversion not possible. Please check your inputs.';
+                resultSpan.textContent = 'Noe har skjedd. Sjekk koden din.';
             }
         }
 
